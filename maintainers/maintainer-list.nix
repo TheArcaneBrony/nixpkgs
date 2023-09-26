@@ -15598,6 +15598,7 @@
     email = "ross@rossabaker.com";
     github = "rossabaker";
     githubId = 142698;
+  };
   Rory = {
     email = "root@rory.gay";
     github = "TheArcaneBrony";
