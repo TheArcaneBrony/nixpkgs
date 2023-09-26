@@ -1,10 +1,10 @@
 { lib
-, nixosTests
 , stdenv
 , fetchFromGitHub
 , makeWrapper
 , nodejs
-, pkgs
+, yarn
+, matrix-sdk-crypto-nodejs
 , mkYarnPackage
 , fetchYarnDeps
 }:
@@ -25,8 +25,8 @@ mkYarnPackage rec {
   nativeBuildInputs = [
     nodejs
     makeWrapper
-    pkgs.yarn
-    pkgs.matrix-sdk-crypto-nodejs
+    yarn
+    matrix-sdk-crypto-nodejs
   ];
   offlineCache = fetchYarnDeps {
     yarnLock = src + "/yarn.lock";
@@ -44,7 +44,7 @@ mkYarnPackage rec {
       yarn --offline --verbose build
       # copy built modules to package...
       echo "Copying built matrix-sdk-crypto-nodejs modules to package..."
-      cp -a ${pkgs.matrix-sdk-crypto-nodejs}/lib/node_modules/* node_modules/
+      cp -a ${matrix-sdk-crypto-nodejs}/lib/node_modules/* node_modules/
       echo "Adding version.txt..."
       mkdir -p deps/draupnir/
       echo "${version}-nix" > deps/draupnir/version.txt

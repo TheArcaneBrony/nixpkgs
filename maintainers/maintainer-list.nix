@@ -15593,18 +15593,18 @@
       fingerprint = "1401 1B63 393D 16C1 AA9C  C521 8526 B757 4A53 6236";
     }];
   };
-  rossabaker = {
-    name = "Ross A. Baker";
-    email = "ross@rossabaker.com";
-    github = "rossabaker";
-    githubId = 142698;
-  };
   Rory = {
     email = "root@rory.gay";
     github = "TheArcaneBrony";
     githubId = 13570458;
     matrix = "@emma:rory.gay"; # This is going to change soon...
     name = "Rory";
+  };
+  rossabaker = {
+    name = "Ross A. Baker";
+    email = "ross@rossabaker.com";
+    github = "rossabaker";
+    githubId = 142698;
   };
   RossComputerGuy = {
     name = "Tristan Ross";
