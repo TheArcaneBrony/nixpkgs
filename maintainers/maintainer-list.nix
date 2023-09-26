@@ -15598,6 +15598,12 @@
     email = "ross@rossabaker.com";
     github = "rossabaker";
     githubId = 142698;
+  Rory = {
+    email = "root@rory.gay";
+    github = "TheArcaneBrony";
+    githubId = 13570458;
+    matrix = "@emma:rory.gay"; # This is going to change soon...
+    name = "Rory";
   };
   RossComputerGuy = {
     name = "Tristan Ross";
