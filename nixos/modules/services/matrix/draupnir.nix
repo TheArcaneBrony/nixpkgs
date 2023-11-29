@@ -175,7 +175,7 @@ in
         }
       '';
       description = lib.mdDoc ''
-        Additional settings (see [Draupnir default config](https://github.com/Gnuxie/Draupnir/blob/main/config/default.yaml) for available settings). These settings will override settings made by the module config.
+        Additional settings (see [Draupnir default config](https://github.com/the-draupnir-project/Draupnir/blob/main/config/default.yaml) for available settings). These settings will override settings made by the module config.
       '';
     };
   };

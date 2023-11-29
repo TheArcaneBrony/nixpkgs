@@ -15594,11 +15594,13 @@
     }];
   };
   Rory = {
-    email = "root@rory.gay";
-    github = "TheArcaneBrony";
+    email = "root@rory.gay"; # not super frequently checked due to noise
+    github = "TheArcaneBrony"; # not super frequently checked due to noise
     githubId = 13570458;
-    matrix = "@emma:rory.gay"; # This is going to change soon...
-    name = "Rory";
+    matrix = "@emma:conduit.rory.gay";
+    # alternatively: @emma:rory.gay, or any other active account on these 2 homeservers,
+    # or #general:conduit.rory.gay if privacy is not required
+    name = "Rory"; # Check Matrix displayname if relevant
   };
   rossabaker = {
     name = "Ross A. Baker";

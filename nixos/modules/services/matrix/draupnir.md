@@ -1,7 +1,7 @@
 # Draupnir (Matrix Moderation Tool) {#module-services-draupnir}
 
 This chapter will show you how to set up your own, self-hosted
-[Draupnir](https://github.com/Gnuxie/Draupnir) instance.
+[Draupnir](https://github.com/the-draupnir-project/Draupnir) instance.
 
 As an all-in-one moderation tool, it can protect your server from
 malicious invites, spam messages, and whatever else you don't want.
@@ -13,12 +13,12 @@ The bot by default includes support for bans, redactions, anti-spam,
 server ACLs, room directory changes, room alias transfers, account
 deactivation, room shutdown, and more.
 
-See the [README](https://github.com/Gnuxie/draupnir#readme)
-page and the [Moderator's guide](https://github.com/Gnuxie/Draupnir/blob/main/docs/moderators.md)
+See the [README](https://github.com/the-draupnir-project/draupnir#readme)
+page and the [Moderator's guide](https://github.com/the-draupnir-project/Draupnir/blob/main/docs/moderators.md)
 for additional instructions on how to setup and use Draupnir.
 
 For [additional settings](#opt-services.draupnir.settings)
-see [the default configuration](https://github.com/Gnuxie/Draupnir/blob/main/config/default.yaml).
+see [the default configuration](https://github.com/the-draupnir-project/Draupnir/blob/main/config/default.yaml).
 
 ## Draupnir Setup {#module-services-draupnir-setup}
 
@@ -72,39 +72,4 @@ log entry with a URL to the consent page will be generated.
 
 ## Synapse Antispam Module {#module-services-draupnir-matrix-synapse-antispam}
 
-A Synapse module is also available to apply the same rulesets the bot
-uses across an entire homeserver.
-
-To use the Antispam Module, add `matrix-synapse-plugins.matrix-synapse-draupnir-antispam`
-to the Synapse plugin list and enable the `draupnir.Module` module.
-
-```
-{
-  services.matrix-synapse = {
-    plugins = with pkgs; [
-      matrix-synapse-plugins.matrix-synapse-draupnir-antispam
-    ];
-    extraConfig = ''
-      modules:
-        - module: draupnir.Module
-          config:
-            # Prevent servers/users in the ban lists from inviting users on this
-            # server to rooms. Default true.
-            block_invites: true
-            # Flag messages sent by servers/users in the ban lists as spam. Currently
-            # this means that spammy messages will appear as empty to users. Default
-            # false.
-            block_messages: false
-            # Remove users from the user directory search by filtering matrix IDs and
-            # display names by the entries in the user ban list. Default false.
-            block_usernames: false
-            # The room IDs of the ban lists to honour. Unlike other parts of Draupnir,
-            # this list cannot be room aliases or permalinks. This server is expected
-            # to already be joined to the room - Draupnir will not automatically join
-            # these rooms.
-            ban_lists:
-              - "!roomid:example.org"
-    '';
-  };
-}
-```
+Use the Mjolnir Antispam module, Draupnir made no changes here and as such was not packaged.
