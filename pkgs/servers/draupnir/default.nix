@@ -34,7 +34,7 @@ mkYarnPackage rec {
     hash = "sha256-j4xiEP54b7nn+bKkTUemwFNpA7s8DlsYnYX4KZgUhHU=";
   };
   yarnLock = src + "/yarn.lock";
-  packageJSON = src + "/package.json";
+  packageJSON = ./package.json;
 
   buildPhase = ''
       echo "Running preBuild"
